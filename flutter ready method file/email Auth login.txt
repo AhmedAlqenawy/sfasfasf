@@ -1,0 +1,13 @@
+ void auth() async {
+    final formdata = _formKey.currentState;
+    AuthResult fireauth;
+    try {
+      fireauth = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: umail, password: upass);
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Your next page()));
+
+    } catch (error) {
+      print(umail + upass + fireauth.user.email);
+    }
+  }

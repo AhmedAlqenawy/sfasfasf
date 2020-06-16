@@ -1,0 +1,15 @@
+ AuthResult fireauth;
+
+  void done() async {
+
+    try {
+      fireauth = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: Uemail, password: Upass1);
+      fireauth.user.sendEmailVerification();
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => splash_screen()));
+
+    } catch (error) {
+      print(Uemail + Upass1 + fireauth.user.email);
+    }
+  }

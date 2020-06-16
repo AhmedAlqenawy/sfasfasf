@@ -1,0 +1,13 @@
+floatingActionButton: FabCircularMenu(
+          ringWidth: 50,
+            fabOpenIcon: Icon(Icons.add_circle_outline),
+            ringDiameter: 300,
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.home), onPressed: () {
+                print('Home');
+              }),
+              IconButton(icon: Icon(Icons.favorite), onPressed: () {
+                print('Favorite');
+              })
+            ]
+        )
